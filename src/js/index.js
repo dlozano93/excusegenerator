@@ -6,11 +6,25 @@ import "../assets/img/4geeks.ico";
 //import 'breathecode-dom'; //DOM override to make JS easier to use
 import "../style/index.scss";
 
-function excuse() {
-  var who1 = ["My Dog", "My Girlfriend", "My brother", "My Cat"];
-  var verb1 = [" ate", " broke", " stole", " scratched", " destroyed"];
+window.onload = () => {
+  document.querySelector("#excusebtn").addEventListener("click", () => {
+    document.querySelector("#the-excuse").innerHTML = excuse();
+  });
+};
+
+var excuse = () => {
+  var who1 = ["A plane", "My dog", "My girlfriend", "My brother", "My cat"];
+  var verb1 = [
+    " ate",
+    " broke",
+    " stole",
+    " scratched",
+    " destroyed",
+    " crashed"
+  ];
   var what1 = [
     " my computer",
+    " my house",
     " my passport",
     " my car",
     " my bike",
@@ -23,7 +37,8 @@ function excuse() {
     " yesterday",
     " last week",
     " last month",
-    " last year"
+    " last year",
+    " tomorrow"
   ];
 
   var who = who1[Math.floor(Math.random() * who1.length)];
@@ -32,4 +47,4 @@ function excuse() {
   var when = when1[Math.floor(Math.random() * when1.length)];
 
   return who + verb + what + when;
-}
+};
